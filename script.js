@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const faviconElement = document.getElementById("favicon");
         faviconElement.href = config.favicon;
       }
+
+      // Set the title
+      if (config.title) {
+        document.title = config.title;
+      }
     });
 
   fetch(`config/links.json?t=${timestamp}`)
