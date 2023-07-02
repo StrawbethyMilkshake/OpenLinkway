@@ -1,0 +1,72 @@
+.link-button {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: #1592a0; /* Default button color fallback */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+#links-container {
+  margin-bottom: 10vh; /* Add a bottom margin */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-bar {
+  background-color: #8d0808;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bar-item {
+  flex: 1;
+  margin: 0;
+  padding: 10px;
+  color: rgb(51, 48, 48);
+  text-align: center;
+}
+
+.link-button img {
+  max-width: 50px;
+  height: 50px;
+}
+
+.logo-container {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center; /* Center the logo horizontally */
+}
+
+#logo-container img {
+  display: block;
+  max-width: 45%;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+#bg-container {
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  z-index: -1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

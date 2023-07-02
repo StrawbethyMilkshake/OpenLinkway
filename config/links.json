@@ -1,0 +1,95 @@
+[
+  {
+    "url": "https://example.com",
+    "text": "Example",
+    "hoverText": "Visit Example",
+    "gradient": {
+      "type": "linear",
+      "direction": "to right",
+      "colors": ["#ff0000", "#00ff00"]
+    }
+  },
+  {
+    "url": "https://another-example.com",
+    "text": "Another Example",
+    "hoverText": "Visit Another Example",
+    "logo": "https://picsum.photos/200",
+    "color": "#ff0000"
+  },
+  {
+    "url": "https://example.com",
+    "text": "Example",
+    "hoverText": "Visit Example",
+    "gradient": {
+      "type": "radial",
+      "shape": "circle",
+      "position": "center",
+      "colors": ["#ff0000", "#00ff00"]
+    }
+  },
+  {
+    "url": "https://fallback-example.com",
+    "text": "Fallback Example",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  },
+  {
+    "url": "https://fallback-example.com",
+    "text": "Fallback Example",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  },
+  {
+    "url": "https://fallback-example.com",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  },
+  {
+    "url": "https://another-example.com",
+    "text": "Another Example",
+    "hoverText": "Visit Another Example",
+    "logo": "https://picsum.photos/200",
+    "color": "#ff0000"
+  },
+  {
+    "url": "https://fallback-example.com",
+    "text": "Fallback Example",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  },
+  {
+    "url": "https://fallback-example.com",
+    "text": "Fallback Example",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  },
+  {
+    "url": "https://fallback-example.com",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  },
+  {
+    "url": "https://another-example.com",
+    "text": "Another Example",
+    "hoverText": "Visit Another Example",
+    "logo": "https://picsum.photos/200",
+    "color": "#ff0000"
+  },
+  {
+    "url": "https://fallback-example.com",
+    "text": "Fallback Example",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  },
+  {
+    "url": "https://fallback-example.com",
+    "text": "Fallback Example",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  },
+  {
+    "url": "https://fallback-example.com",
+    "hoverText": "Visit Fallback Example",
+    "logo": "https://cataas.com/cat"
+  }
+]
