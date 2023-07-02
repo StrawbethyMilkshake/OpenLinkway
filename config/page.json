@@ -1,4 +1,5 @@
 {
   "logo": "assets/logo.png",
-  "backgroundImage": "https://cataas.com/cat?filter=sepia&width=1280&height=720"
+  "backgroundImage": "https://cataas.com/cat?filter=sepia&width=1280&height=720",
+  "favicon": "https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/face-grin-squint-512.png"
 }

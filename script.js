@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (config.backgroundImage) {
         bgContainer.style.backgroundImage = `url(${config.backgroundImage})`;
       }
+
+      // Set the favicon
+      if (config.favicon) {
+        const faviconElement = document.getElementById("favicon");
+        faviconElement.href = config.favicon;
+      }
     });
 
   fetch(`config/links.json?t=${timestamp}`)
