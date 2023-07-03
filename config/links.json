@@ -1,6 +1,6 @@
 [
   {
-    "url": "https://example.com",
+    "url": "https://example.local",
     "text": "Example",
     "hoverText": "Visit Example",
     "gradient": {
@@ -10,14 +10,14 @@
     }
   },
   {
-    "url": "https://another-example.com",
+    "url": "https://another-example.local",
     "text": "Another Example",
     "hoverText": "Visit Another Example",
     "logo": "https://picsum.photos/200",
     "color": "#ff0000"
   },
   {
-    "url": "https://example.com",
+    "url": "https://example.local",
     "text": "Example",
     "hoverText": "Visit Example",
     "gradient": {
@@ -28,67 +28,67 @@
     }
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "text": "Fallback Example",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "text": "Fallback Example",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   },
   {
-    "url": "https://another-example.com",
+    "url": "https://another-example.local",
     "text": "Another Example",
     "hoverText": "Visit Another Example",
     "logo": "https://picsum.photos/200",
     "color": "#ff0000"
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "text": "Fallback Example",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "text": "Fallback Example",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   },
   {
-    "url": "https://another-example.com",
+    "url": "https://another-example.local",
     "text": "Another Example",
     "hoverText": "Visit Another Example",
     "logo": "https://picsum.photos/200",
     "color": "#ff0000"
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "text": "Fallback Example",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "text": "Fallback Example",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   },
   {
-    "url": "https://fallback-example.com",
+    "url": "https://fallback-example.local",
     "hoverText": "Visit Fallback Example",
     "logo": "https://cataas.com/cat"
   }
