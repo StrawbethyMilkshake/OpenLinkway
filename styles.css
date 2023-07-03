@@ -20,6 +20,10 @@ footer {
   width: 100%;
 }
 
+footer.unpinned {
+  position: static;
+}
+
 .footer-bar {
   background-color: #8d0808;
   width: 100%;

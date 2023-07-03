@@ -138,21 +138,24 @@ function generateGradientStyle(gradient) {
   return "";
 }
 
-function setButtonMargins() {
+function pageRightsize() {
   const aspectRatio = window.innerWidth / window.innerHeight;
   const linksContainer = document.getElementById("links-container");
+  const footer = document.querySelector("footer");
 
   if (aspectRatio < 1) {
     linksContainer.style.marginLeft = "10%";
     linksContainer.style.marginRight = "10%";
+    footer.classList.add("unpinned"); // Add the "unpinned" class
   } else {
-    linksContainer.style.marginLeft = "30%";
-    linksContainer.style.marginRight = "30%";
+    linksContainer.style.marginLeft = "25%";
+    linksContainer.style.marginRight = "25%";
+    footer.classList.remove("unpinned"); // Remove the "unpinned" class
   }
 }
 
 // Call the function initially when the page loads
-document.addEventListener("DOMContentLoaded", setButtonMargins);
+document.addEventListener("DOMContentLoaded", pageRightsize);
 
 // Call the function whenever the window is resized
-window.addEventListener("resize", setButtonMargins);
+window.addEventListener("resize", pageRightsize);
