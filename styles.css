@@ -1,6 +1,8 @@
 .link-button {
-  display: block;
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+  justify-content: center;
   padding: 10px;
   text-align: center;
   background-color: #1592a0; /* Default button color fallback */
