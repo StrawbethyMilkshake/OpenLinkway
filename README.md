@@ -80,7 +80,7 @@ Example usage:
 ]
 ```
 
-### Customise the footer and header bars in the bars.json file. Set the background colour and define the items to be displayed. You can use plain text or markdown-style links.
+### 3. Customise the footer and header bars in the bars.json file. Set the background colour and define the items to be displayed. You can use plain text or markdown-style links.
 The bars.json file is responsible for configuring the header and footer sections of LinkFree. It contains the following properties:
 
  - header: An object representing the header bar configuration.
