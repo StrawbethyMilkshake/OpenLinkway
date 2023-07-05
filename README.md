@@ -47,6 +47,7 @@ The `links.json` file is used to define the links displayed in LinkFree. It cons
 - `url`: The URL of the link.
 - `text`: The text displayed for the link.
 - `hoverText`: The text displayed when hovering over the link.
+- `newTab`: boolean controling whether link opens in new tab
 - `logo`: The URL of the logo image associated with the link.
 - `color`: The background colour of the link.
 - `gradient`: An object defining a gradient background for the link. It includes the following properties:
@@ -61,6 +62,7 @@ Example usage:
     "url": "https://example.com",
     "text": "Example",
     "hoverText": "Visit Example",
+    "newTab": true,
     "gradient": {
       "type": "linear",
       "direction": "to right",
