@@ -8,38 +8,52 @@ document.addEventListener("DOMContentLoaded", function () {
   // Generate a unique query parameter
   const timestamp = Date.now();
 
-  fetch(`config/page.json?t=${timestamp}`)
+  const linksPromise = fetch(`config/links.json?t=${timestamp}`)
     .then((response) => response.json())
-    .then((config) => {
-      // Set the logo
-      if (config.logo) {
+    .catch((error) => {
+      console.error("Error fetching links:", error);
+      return []; // Provide an empty array as a fallback
+    });
+
+  const pagePromise = fetch(`config/page.json?t=${timestamp}`)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error("Error fetching page configuration:", error);
+      return {}; // Provide an empty object as a fallback
+    });
+
+  const barsPromise = fetch(`config/bars.json?t=${timestamp}`)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error("Error fetching bar configuration:", error);
+      return {}; // Provide an empty object as a fallback
+    });
+
+  Promise.all([linksPromise, pagePromise, barsPromise])
+    .then(([linksData, pageData, barsData]) => {
+      // Process the page configuration
+      if (pageData.logo) {
         const logoImg = document.createElement("img");
-        logoImg.src = config.logo;
+        logoImg.src = pageData.logo;
         logoImg.alt = "Logo";
         logoContainer.appendChild(logoImg);
       }
 
-      // Set the background image
-      if (config.backgroundImage) {
-        bgContainer.style.backgroundImage = `url(${config.backgroundImage})`;
+      if (pageData.backgroundImage) {
+        bgContainer.style.backgroundImage = `url(${pageData.backgroundImage})`;
       }
 
-      // Set the favicon
-      if (config.favicon) {
+      if (pageData.favicon) {
         const faviconElement = document.getElementById("favicon");
-        faviconElement.href = config.favicon;
+        faviconElement.href = pageData.favicon;
       }
 
-      // Set the title
-      if (config.title) {
-        document.title = config.title;
+      if (pageData.title) {
+        document.title = pageData.title;
       }
-    });
 
-  fetch(`config/links.json?t=${timestamp}`)
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((link) => {
+      // Process the links configuration
+      linksData.forEach((link) => {
         const linkButton = document.createElement("a");
         linkButton.href = link.url;
         linkButton.rel = "noopener";
@@ -75,20 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         linksContainer.appendChild(linkButton);
       });
-    })
-    .catch((error) => {
-      console.error("Error fetching links:", error);
-    });
 
-    fetch(`config/bars.json?t=${timestamp}`)
-    .then((response) => response.json())
-    .then((data) => {
-      const { header, footer } = data;
-  
-      // Set the color of the header bar if defined
+      // Process the bars configuration
+      const { header, footer } = barsData;
+
       if (header) {
         headerBar.style.backgroundColor = header.color;
-  
+
         if (header.items) {
           header.items.forEach((item) => {
             const headerItem = createBarItem(item);
@@ -96,11 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         }
       }
-  
-      // Set the color of the footer bar if defined
+
       if (footer) {
         footerBar.style.backgroundColor = footer.color;
-  
+
         if (footer.items) {
           footer.items.forEach((item) => {
             const footerItem = createBarItem(item);
@@ -110,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
     .catch((error) => {
-      console.error("Error fetching bar items:", error);
+      console.error("Error loading configuration:", error);
     });
 });
 
