@@ -78,21 +78,33 @@ Example usage:
 ]
 ```
 
-### 3. Customise the footer bar in the `footer.json` file. Set the background colour and define the items to be displayed. You can use plain text or markdown-style links.
+### Customise the footer and header bars in the bars.json file. Set the background colour and define the items to be displayed. You can use plain text or markdown-style links.
+The bars.json file is responsible for configuring the header and footer sections of LinkFree. It contains the following properties:
 
-The `footer.json` file is responsible for configuring the footer section of LinkFree. It contains the following properties:
-
-- `color`: The background colour of the footer bar.
-- `items`: An array of items displayed in the footer bar. Each item can be either a string or a string with markdown-style links using the format `[link text](link URL)`.
-
+ - header: An object representing the header bar configuration.
+    - color: The background colour of the header bar.
+    - items: An array of items displayed in the header bar. Each item can be either a string or a string with markdown-style links using the format [link text](link URL).
+ - footer: An object representing the footer bar configuration.
+    - color: The background colour of the footer bar.
+    - items: An array of items displayed in the footer bar. Each item can be either a string or a string with markdown-style links using the format [link text](link URL).
 Example usage:
 ```json
 {
-  "color": "#94f5af",
-  "items": [
-    "hello",
-    "Footer item 2",
-    "Powered by [LinkFree](https://github.com) create your own!"
-  ]
+  "header": {
+    "color": "#94f5af",
+    "items": [
+      "Hello",
+      "Header item 2",
+      "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) - create your own!"
+    ]
+  },
+  "footer": {
+    "color": "#94f5af",
+    "items": [
+      "Hello",
+      "Footer item 2",
+      "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) - create your own!"
+    ]
+  }
 }
 ```
