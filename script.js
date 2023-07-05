@@ -132,12 +132,6 @@ function pageRightsize() {
   }
 }
 
-// Call the function initially when the page loads
-document.addEventListener("DOMContentLoaded", pageRightsize);
-
-// Call the function whenever the window is resized
-window.addEventListener("resize", pageRightsize);
-
 function processMarkdownLinks(text) {
   const linkRegex = /\[(.*?)\]\((.*?)\)/g;
   let remainingText = text;
@@ -165,3 +159,9 @@ function processMarkdownLinks(text) {
 
   return processedText;
 }
+
+// Call the function initially when the page loads
+document.addEventListener("DOMContentLoaded", pageRightsize);
+
+// Call the function whenever the window is resized
+window.addEventListener("resize", pageRightsize);
