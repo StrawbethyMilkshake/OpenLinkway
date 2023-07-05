@@ -3,6 +3,7 @@
     "url": "https://example.local",
     "text": "Example",
     "hoverText": "Visit Example",
+    "newTab": true,
     "gradient": {
       "type": "linear",
       "direction": "to right",

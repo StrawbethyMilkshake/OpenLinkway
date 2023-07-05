@@ -56,6 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
           linkButton.appendChild(logoImg);
         }
 
+        if (link.newTab) {
+          linkButton.target = "_blank"; // Open link in a new tab
+        }
+
         const spanText = document.createElement("span");
         spanText.textContent = link.text;
         linkButton.appendChild(spanText);
