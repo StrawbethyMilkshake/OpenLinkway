@@ -93,8 +93,6 @@ Example usage:
   "header": {
     "color": "#94f5af",
     "items": [
-      "Hello",
-      "Header item 2",
       "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) - create your own!"
     ]
   },
