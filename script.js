@@ -9,21 +9,42 @@ document.addEventListener("DOMContentLoaded", function () {
   const timestamp = Date.now();
 
   const linksPromise = fetch(`config/links.json?t=${timestamp}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error("Error fetching links:", response.status);
+        return []; // Provide an empty array as a fallback
+      }
+    })
     .catch((error) => {
       console.error("Error fetching links:", error);
       return []; // Provide an empty array as a fallback
     });
 
   const pagePromise = fetch(`config/page.json?t=${timestamp}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error("Error fetching page configuration:", response.status);
+        return {}; // Provide an empty object as a fallback
+      }
+    })
     .catch((error) => {
       console.error("Error fetching page configuration:", error);
       return {}; // Provide an empty object as a fallback
     });
 
   const barsPromise = fetch(`config/bars.json?t=${timestamp}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error("Error fetching bar configuration:", response.status);
+        return {}; // Provide an empty object as a fallback
+      }
+    })
     .catch((error) => {
       console.error("Error fetching bar configuration:", error);
       return {}; // Provide an empty object as a fallback
