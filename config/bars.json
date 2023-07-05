@@ -1,12 +1,8 @@
 {
-  "header": { "color": "#94f5af",
-    "items": [
-      "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) create your own!"
-    ]},
     "footer": { "color": "#94f5af",
     "items": [
-      "hello",
-      "Footer item 2",
-      "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) create your own!"
+    "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) create your own!",
+    "Facebook icon designed by [OpenMoji](https://openmoji.org) - the open-source emoji and icon project. License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)",
+    "Demo button/Background images from [Lorem Picsum](https://picsum.photos) and [Cat as a service](https://cataas.com/)"
     ]}
 }
