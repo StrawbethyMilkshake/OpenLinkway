@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const logoContainer = document.getElementById("logo-container");
   const linksContainer = document.getElementById("links-container");
   const bgContainer = document.getElementById("bg-container");
+  const footerBar = document.getElementById("footer-bar");
 
   // Generate a unique query parameter
   const timestamp = Date.now();
@@ -73,13 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
       console.error("Error fetching links:", error);
     });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const footerBar = document.getElementById("footer-bar");
-
-  // Generate a unique query parameter
-  const timestamp = Date.now();
 
   fetch(`config/footer.json?t=${timestamp}`)
     .then((response) => response.json())
@@ -94,24 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
         footerItem.classList.add("footer-bar-item");
 
         if (typeof item === "string") {
-          const linkRegex = /\[(.*?)\]\((.*?)\)/g;
-          const linkMatches = item.match(linkRegex);
-
-          if (linkMatches) {
-            const linkText = linkMatches[0].match(/\[(.*?)\]/)[1];
-            const linkUrl = linkMatches[0].match(/\((.*?)\)/)[1];
-
-            const linkElement = document.createElement("a");
-            linkElement.href = linkUrl;
-            linkElement.textContent = linkText;
-
-            const additionalText = item.split(linkMatches[0]);
-            footerItem.appendChild(document.createTextNode(additionalText[0]));
-            footerItem.appendChild(linkElement);
-            footerItem.appendChild(document.createTextNode(additionalText[1]));
-          } else {
-            footerItem.innerText = item;
-          }
+          const processedItem = processMarkdownLinks(item);
+          footerItem.innerHTML = processedItem;
         } else {
           footerItem.innerText = item;
         }
@@ -148,8 +126,8 @@ function pageRightsize() {
     linksContainer.style.marginRight = "10%";
     footer.classList.add("unpinned"); // Add the "unpinned" class
   } else {
-    linksContainer.style.marginLeft = "25%";
-    linksContainer.style.marginRight = "25%";
+    linksContainer.style.marginLeft = "30%";
+    linksContainer.style.marginRight = "30%";
     footer.classList.remove("unpinned"); // Remove the "unpinned" class
   }
 }
@@ -159,3 +137,31 @@ document.addEventListener("DOMContentLoaded", pageRightsize);
 
 // Call the function whenever the window is resized
 window.addEventListener("resize", pageRightsize);
+
+function processMarkdownLinks(text) {
+  const linkRegex = /\[(.*?)\]\((.*?)\)/g;
+  let remainingText = text;
+  let processedText = "";
+
+  while (remainingText.length > 0) {
+    const linkMatches = remainingText.match(linkRegex);
+    if (linkMatches) {
+      const linkMatch = linkMatches[0];
+      const linkText = linkMatch.match(/\[(.*?)\]/)[1];
+      const linkUrl = linkMatch.match(/\((.*?)\)/)[1];
+
+      const linkElement = `<a href="${linkUrl}">${linkText}</a>`;
+
+      const linkIndex = remainingText.indexOf(linkMatch);
+      const plainText = remainingText.substring(0, linkIndex);
+      remainingText = remainingText.substring(linkIndex + linkMatch.length);
+
+      processedText += plainText + linkElement;
+    } else {
+      processedText += remainingText;
+      break;
+    }
+  }
+
+  return processedText;
+}
