@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const linksContainer = document.getElementById("links-container");
   const bgContainer = document.getElementById("bg-container");
   const footerBar = document.getElementById("footer-bar");
+  const headerBar = document.getElementById("header-bar");
 
   // Generate a unique query parameter
   const timestamp = Date.now();
@@ -75,30 +76,37 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error fetching links:", error);
     });
 
-  fetch(`config/footer.json?t=${timestamp}`)
+    fetch(`config/bars.json?t=${timestamp}`)
     .then((response) => response.json())
     .then((data) => {
-      const { color, items } = data;
-
-      // Set the color of the footer bar
-      footerBar.style.backgroundColor = color;
-
-      items.forEach((item) => {
-        const footerItem = document.createElement("p");
-        footerItem.classList.add("footer-bar-item");
-
-        if (typeof item === "string") {
-          const processedItem = processMarkdownLinks(item);
-          footerItem.innerHTML = processedItem;
-        } else {
-          footerItem.innerText = item;
+      const { header, footer } = data;
+  
+      // Set the color of the header bar if defined
+      if (header) {
+        headerBar.style.backgroundColor = header.color;
+  
+        if (header.items) {
+          header.items.forEach((item) => {
+            const headerItem = createBarItem(item);
+            headerBar.appendChild(headerItem);
+          });
         }
-
-        footerBar.appendChild(footerItem);
-      });
+      }
+  
+      // Set the color of the footer bar if defined
+      if (footer) {
+        footerBar.style.backgroundColor = footer.color;
+  
+        if (footer.items) {
+          footer.items.forEach((item) => {
+            const footerItem = createBarItem(item);
+            footerBar.appendChild(footerItem);
+          });
+        }
+      }
     })
     .catch((error) => {
-      console.error("Error fetching footer items:", error);
+      console.error("Error fetching bar items:", error);
     });
 });
 
@@ -158,6 +166,20 @@ function processMarkdownLinks(text) {
   }
 
   return processedText;
+}
+
+function createBarItem(item) {
+  const barItem = document.createElement("p");
+  barItem.classList.add("bar-item");
+
+  if (typeof item === "string") {
+    const processedItem = processMarkdownLinks(item);
+    barItem.innerHTML = processedItem;
+  } else {
+    barItem.innerText = item;
+  }
+
+  return barItem;
 }
 
 // Call the function initially when the page loads
