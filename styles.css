@@ -13,6 +13,7 @@
 }
 
 #links-container {
+  margin-top: 20px;
   margin-bottom: 10vh; /* Add a bottom margin */
 }
 
@@ -51,7 +52,6 @@ footer.unpinned {
 .logo-container {
   display: block;
   margin-top: 10px;
-  margin-bottom: 20px;
   padding: 10px;
   text-align: center; /* Center the logo horizontally */
 }
