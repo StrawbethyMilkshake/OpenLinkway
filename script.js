@@ -73,6 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.title = pageData.title;
       }
 
+      if (pageData.language) {
+        document.documentElement.lang = pageData.language;
+      }  
+
       // Process the links configuration
       linksData.forEach((link) => {
         const linkButton = document.createElement("a");
