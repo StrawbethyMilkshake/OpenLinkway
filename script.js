@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const bgContainer = document.getElementById("bg-container");
   const footerBar = document.getElementById("footer-bar");
   const headerBar = document.getElementById("header-bar");
+  const metaDescription = document.querySelector('meta[name="description"]');
 
   // Generate a unique query parameter
   const timestamp = Date.now();
@@ -71,6 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (pageData.title) {
         document.title = pageData.title;
+      }
+
+      if (pageData.description) {
+        metaDescription.textContent = pageData.description;
       }
 
       if (pageData.language) {
