@@ -10,11 +10,20 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-left: 3%;
   margin-right: 3%;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: xx-large;
+  text-decoration: none !important; 
 }
 
 #links-container {
   margin-top: 20px;
   margin-bottom: 10vh; /* Add a bottom margin */
+}
+
+body {
+  background-color: #000000;
 }
 
 footer {
@@ -49,6 +58,11 @@ footer.unpinned {
   height: 50px;
 }
 
+.link-button span {
+  flex: 1;
+  text-align: center;
+}
+
 .logo-container {
   display: block;
   margin-top: 10px;
@@ -60,6 +74,10 @@ footer.unpinned {
   display: block;
   max-width: 45%;
   margin: 0 auto; /* Center the image horizontally */
+}
+
+#logo-container.large img {
+  max-width: 90%; /* Set max-width to 80% when in mobile view */
 }
 
 #bg-container {
