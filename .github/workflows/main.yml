@@ -18,14 +18,6 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
 
-      - name: Create Release
-        id: create_release
-        uses: elgohr/Github-Release-Action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          title: release-${{ github.sha }}
-
       - name: Archive Files
         run: |
           tar -czf release-${{ github.sha }}.tar.gz styles.css script.js index.html LICENSE.md
