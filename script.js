@@ -110,6 +110,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
         linkButton.setAttribute("title", link.hoverText);
 
+        if (link.fontFamily) {
+          linkButton.style.fontFamily = link.fontFamily;
+        }
+
+        if (link.fontWeight) {
+          linkButton.style.fontWeight = link.fontWeight;
+        }
+
+        if (link.fontSize) {
+          linkButton.style.fontSize = link.fontSize;
+        }
+
+        if (link.textDecoration) {
+          if (link.textDecoration.line) {
+            linkButton.style.textDecorationLine = link.textDecoration.line;
+          }
+          if (link.textDecoration.thickness) {
+            linkButton.style.textDecorationThickness = link.textDecoration.thickness;
+          }
+          if (link.textDecoration.style) {
+            linkButton.style.textDecorationStyle = link.textDecoration.style;
+          }
+          if (link.textDecoration.color) {
+            linkButton.style.textDecorationColor = link.textDecoration.color;
+          }
+        }
+
+        if (link.textColor) {
+          linkButton.style.color = link.textColor;
+        }
+
         if (link.gradient) {
           const gradientStyle = generateGradientStyle(link.gradient);
           linkButton.style.backgroundImage = gradientStyle;
