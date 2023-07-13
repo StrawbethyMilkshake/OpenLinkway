@@ -1,0 +1,43 @@
+name: Create Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: release-${{ github.sha }}
+          release_name: Release ${{ github.sha }}
+          body: |
+            Release ${{ github.sha }}
+          draft: false
+          prerelease: false
+
+      - name: Archive Files
+        run: |
+          TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+          tar -czf release-${TIMESTAMP}.tar.gz styles.css script.js index.html LICENSE.md
+
+      - name: Upload Release Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: release-artifact
+          path: release-*.tar.gz
