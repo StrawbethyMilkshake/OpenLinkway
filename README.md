@@ -32,7 +32,7 @@ The `page.json` file is responsible for configuring the appearance of the LinkFr
 - `favicon`: Specifies the URL for the favicon.
 - `title`: Specifies the title of the page.
 - `description`: Specifies the page description.
-- `language`: Specifies a language for the page.d
+- `language`: Specifies a language for the page.
 
 Example usage:
 ```json
