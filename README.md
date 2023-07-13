@@ -36,7 +36,10 @@ Example usage:
 {
   "logo": "assets/logo.png",
   "backgroundImage": "https://cataas.com/cat?filter=sepia&width=1280&height=720",
-  "favicon": "https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/face-grin-squint-512.png"
+  "favicon": "https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/face-grin-squint-512.png",
+  "title": "Cat - LinkFree",
+  "description": "Cat's Link site",
+  "language": "en"
 }
 ```
 
@@ -44,37 +47,59 @@ Example usage:
 
 The `links.json` file is used to define the links displayed in LinkFree. It consists of an array of link objects, where each object represents a link with the following properties:
 
-- `url`: The URL of the link.
-- `text`: The text displayed for the link.
-- `hoverText`: The text displayed when hovering over the link.
-- `newTab`: boolean controling whether link opens in new tab
-- `logo`: The URL of the logo image associated with the link.
-- `color`: The background colour of the link.
-- `gradient`: An object defining a gradient background for the link. It includes the following properties:
-    - `type`: The type of gradient (either "linear" or "radial").
-    - `direction` (for linear gradients): The direction of the gradient.
-    - `colors`: An array of colours to create the gradient.
+ - `url` (string): The URL or page associated with the link.
+ - `text` (string): The text displayed for the link.
+ - `hoverText` (string): The text displayed as a tooltip when hovering over the link.
+ - `newTab` (boolean): Specifies whether the link should open in a new tab.
+ - `gradient` (object): Defines a gradient background for the link.
+    - `type` (string): The type of gradient ("linear" or "radial").
+    - `direction` (string): The direction of the linear gradient ("to right", "to left", "to top", "to bottom", etc.).
+    - `shape` (string): The shape of the radial gradient ("circle", "ellipse", etc.).
+    - `position` (string): The position of the radial gradient ("center", "top left", "bottom right", etc.).
+    - `colors` (array): An array of colors to create the gradient.
+ - `fontFamily` (string): Specifies the font family for the link text.
+ - `fontWeight` (string): Specifies the font weight for the link text.
+ - `fontSize` (string): Specifies the font size for the link text.
+ - `textDecoration` (object): Defines the decoration for the link text.
+    - `line` (string): The text decoration line ("underline", "line-through", etc.).
+    - `thickness` (string): The thickness of the text decoration line.
+    - `style` (string): The style of the text decoration line ("solid", "dashed", "dotted", "wavy", etc.).
+    - `color` (string): The color of the text decoration line.
+ - `textColor` (string): Specifies the color for the link text.
+ - `logo` (string): The URL of an image to be displayed alongside the link.
+ - `color` (string): Specifies a background color for the link.
 
 Example usage:
 ```json
 [
-  {
-    "url": "https://example.com",
-    "text": "Example",
-    "hoverText": "Visit Example",
-    "newTab": true,
-    "gradient": {
-      "type": "linear",
-      "direction": "to right",
-      "colors": ["#ff0000", "#00ff00"]
-    }
-  },
   {
     "url": "https://another-example.com",
     "text": "Another Example",
     "hoverText": "Visit Another Example",
     "logo": "https://picsum.photos/200",
     "color": "#ff0000"
+  },
+  {
+    "url": "https://example.local",
+    "text": "Example",
+    "hoverText": "Visit Example",
+    "newTab": true,
+    "gradient": {
+      "type": "linear",
+      "direction": "to right",
+      "colors": ["#ff0000", "#00ff0022"]
+    },
+    "color": "transparent",
+    "fontFamily": "monospace",
+    "fontWeight": "100",
+    "fontSize": "small",
+    "textDecoration": {
+      "line": "underline",
+      "thickness": "initial",
+      "style": "wavy",
+      "color": "green"
+    },
+    "textColor": "#000000"
   },
   ...
 ]
@@ -92,19 +117,15 @@ The bars.json file is responsible for configuring the header and footer sections
 Example usage:
 ```json
 {
-  "header": {
-    "color": "#94f5af",
+    "header": { "color": "#94f5afB0",
     "items": [
-      "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) - create your own!"
-    ]
-  },
-  "footer": {
-    "color": "#94f5af",
+    "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) create your own!"
+    ]},
+    "footer": { "color": "#94f5afB0",
     "items": [
-      "Hello",
-      "Footer item 2",
-      "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) - create your own!"
-    ]
-  }
+    "Powered by [LinkFree](https://github.com/StrawbethyMilkshake/LinkFree) create your own!",
+    "Facebook icon designed by [OpenMoji](https://openmoji.org) - the open-source emoji and icon project. License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)",
+    "Demo button/Background images from [Lorem Picsum](https://picsum.photos) and [Cat as a service](https://cataas.com/)"
+    ]}
 }
 ```
