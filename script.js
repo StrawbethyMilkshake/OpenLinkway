@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const bgContainer = document.getElementById("bg-container");
   const footerBar = document.getElementById("footer-bar");
   const headerBar = document.getElementById("header-bar");
+  const metaDescription = document.querySelector('meta[name="description"]');
 
   // Generate a unique query parameter
   const timestamp = Date.now();
@@ -73,6 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.title = pageData.title;
       }
 
+      if (pageData.description) {
+        metaDescription.textContent = pageData.description;
+      }
+
       if (pageData.language) {
         document.documentElement.lang = pageData.language;
       }  
@@ -104,6 +109,37 @@ document.addEventListener("DOMContentLoaded", function () {
         linkButton.appendChild(spanText);
 
         linkButton.setAttribute("title", link.hoverText);
+
+        if (link.fontFamily) {
+          linkButton.style.fontFamily = link.fontFamily;
+        }
+
+        if (link.fontWeight) {
+          linkButton.style.fontWeight = link.fontWeight;
+        }
+
+        if (link.fontSize) {
+          linkButton.style.fontSize = link.fontSize;
+        }
+
+        if (link.textDecoration) {
+          if (link.textDecoration.line) {
+            linkButton.style.textDecorationLine = link.textDecoration.line;
+          }
+          if (link.textDecoration.thickness) {
+            linkButton.style.textDecorationThickness = link.textDecoration.thickness;
+          }
+          if (link.textDecoration.style) {
+            linkButton.style.textDecorationStyle = link.textDecoration.style;
+          }
+          if (link.textDecoration.color) {
+            linkButton.style.textDecorationColor = link.textDecoration.color;
+          }
+        }
+
+        if (link.textColor) {
+          linkButton.style.color = link.textColor;
+        }
 
         if (link.gradient) {
           const gradientStyle = generateGradientStyle(link.gradient);
@@ -161,17 +197,21 @@ function generateGradientStyle(gradient) {
 
 function pageRightsize() {
   const aspectRatio = window.innerWidth / window.innerHeight;
+  const logoContainer = document.getElementById('logo-container');
   const linksContainer = document.getElementById("links-container");
   const footer = document.querySelector("footer");
 
   if (aspectRatio < 1) {
     linksContainer.style.marginLeft = "10%";
     linksContainer.style.marginRight = "10%";
+    logoContainer.classList.add("large");
     footer.classList.add("unpinned"); // Add the "unpinned" class
+    
   } else {
     linksContainer.style.marginLeft = "30%";
     linksContainer.style.marginRight = "30%";
     footer.classList.remove("unpinned"); // Remove the "unpinned" class
+    logoContainer.classList.remove("large");
   }
 }
 

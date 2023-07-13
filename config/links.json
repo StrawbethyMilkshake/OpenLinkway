@@ -8,7 +8,17 @@
       "type": "linear",
       "direction": "to right",
       "colors": ["#ff0000", "#00ff00"]
-    }
+    },
+    "fontFamily": "monospace",
+    "fontWeight": "100",
+    "fontSize": "small",
+    "textDecoration": {
+      "line": "underline",
+      "thickness": "initial",
+      "style": "wavy",
+      "color": "green"
+    },
+    "textColor": "#000000"
   },
   {
     "url": "https://another-example.local",
