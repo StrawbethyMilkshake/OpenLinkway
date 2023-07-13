@@ -20,10 +20,15 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           
+      - name: Archive Files
+        run: |
+          tar -czf release-${{ github.sha }}.tar.gz styles.css script.js index.html LICENSE.md
+
+          
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "styles.css,script.js,index.html,LICENSE.md"
+          artifacts: release-${{ github.sha }}.tar.gz
           tag: release-${{ github.sha }}
           body: |
             Release ${{ github.sha }}
