@@ -30,6 +30,9 @@ The `page.json` file is responsible for configuring the appearance of the LinkFr
 - `logo`: Specifies the URL of the logo image to be displayed in the header.
 - `backgroundImage`: Specifies the URL of the background image for LinkFree.
 - `favicon`: Specifies the URL for the favicon.
+- `title`: Specifies the title of the page.
+- `description`: Sets a page description for SEO
+- `language`: Specifies a language for the page
 
 Example usage:
 ```json
