@@ -36,3 +36,4 @@ jobs:
           omitBodyDuringUpdate: true
           omitDraftDuringUpdate: true
           omitPrereleaseDuringUpdate: true
+          makeLatest: true
