@@ -22,13 +22,13 @@ jobs:
           
       - name: Archive Files
         run: |
-          tar -czf LittlePathway.tar.gz styles.css script.js index.html LICENSE.md
+          tar -czf OpenLinkway.tar.gz styles.css script.js index.html LICENSE.md
 
           
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: LittlePathway.tar.gz
+          artifacts: OpenLinkway.tar.gz
           tag: release-${{ github.sha }}
           body: |
             Release ${{ github.sha }}
