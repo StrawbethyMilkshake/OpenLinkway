@@ -1,29 +1,29 @@
-# OpenLinkway
-OpenLinkway is a simple web application that allows you to create and customise a collection of links with ease.
+# LittlePathway
+LittlePathway is a simple web application that allows you to create and customise a collection of links with ease.
 
 ## Project Goals
 
-🔗 Simplify Link Management: OpenLinkway aims to provide a simple web application that allows users to create and customise a collection of links effortlessly.
+🔗 Simplify Link Management: LittlePathway aims to provide a simple web application that allows users to create and customise a collection of links effortlessly.
 
-👩‍💻 No Coding Required: The primary goal of OpenLinkway is to eliminate the need for users to write any code. Instead, users can configure OpenLinkway through easily editable configuration files.
+👩‍💻 No Coding Required: The primary goal of LittlePathway is to eliminate the need for users to write any code. Instead, users can configure LittlePathway through easily editable configuration files.
 
-🍦 Vanilla JS: OpenLinkway is built using only vanilla JavaScript, avoiding the use of any frameworks or libraries. This choice ensures simplicity and eliminates dependencies.
+🍦 Vanilla JS: LittlePathway is built using only vanilla JavaScript, avoiding the use of any frameworks or libraries. This choice ensures simplicity and eliminates dependencies.
 
-💻 Client-side Rendering: All rendering is done in the user's browser without the need for server-side code. This approach allows for minimal running costs, potentially making it feasible to host OpenLinkway for free or at very low cost.
+💻 Client-side Rendering: All rendering is done in the user's browser without the need for server-side code. This approach allows for minimal running costs, potentially making it feasible to host LittlePathway for free or at very low cost.
 
-✨ Easy customisation: With OpenLinkway, users can easily customise the appearance of their OpenLinkway page by editing configuration files. This flexibility enables users to create a personalised collection of links that aligns with their preferences and branding.
+✨ Easy customisation: With LittlePathway, users can easily customise the appearance of their LittlePathway page by editing configuration files. This flexibility enables users to create a personalised collection of links that aligns with their preferences and branding.
 
-📚 Documentation: OpenLinkway strives to provide comprehensive documentation to assist users in setting up and configuring their OpenLinkway page. This ensures a smooth and hassle-free experience.
+📚 Documentation: LittlePathway strives to provide comprehensive documentation to assist users in setting up and configuring their LittlePathway page. This ensures a smooth and hassle-free experience.
 
 ## Getting Started
-To use OpenLinkway with your custom configurations, follow these steps:
+To use LittlePathway with your custom configurations, follow these steps:
 
 ### 1. Set up the `page.json` file with the desired logo and background image URLs.
 
-The `page.json` file is responsible for configuring the appearance of the OpenLinkway page. It contains the following properties:
+The `page.json` file is responsible for configuring the appearance of the LittlePathway page. It contains the following properties:
 
 - `logo`: Specifies the URL of the logo image to be displayed in the header.
-- `backgroundImage`: Specifies the URL of the background image for OpenLinkway.
+- `backgroundImage`: Specifies the URL of the background image for LittlePathway.
 - `favicon`: Specifies the URL for the favicon.
 - `title`: Specifies the title of the page.
 - `description`: Specifies the page description.
@@ -35,7 +35,7 @@ Example usage:
   "logo": "assets/logo.png",
   "backgroundImage": "https://cataas.com/cat?filter=sepia&width=1280&height=720",
   "favicon": "https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/face-grin-squint-512.png",
-  "title": "Cat - OpenLinkway",
+  "title": "Cat - LittlePathway",
   "description": "Cat's Link site",
   "language": "en"
 }
@@ -43,7 +43,7 @@ Example usage:
 
 ### 2. Configure the links by editing the `links.json` file. Add, modify, or remove link objects as needed. Customise the URL, text, hover text, logo, colour, or gradient for each link.
 
-The `links.json` file is used to define the links displayed in OpenLinkway. It consists of an array of link objects, where each object represents a link with the following properties:
+The `links.json` file is used to define the links displayed in LittlePathway. It consists of an array of link objects, where each object represents a link with the following properties:
 
  - `url` (string): The URL or page associated with the link.
  - `text` (string): The text displayed for the link.
@@ -104,7 +104,7 @@ Example usage:
 ```
 
 ### 3. Customise the footer and header bars in the bars.json file. Set the background colour and define the items to be displayed. You can use plain text or markdown-style links.
-The bars.json file is responsible for configuring the header and footer sections of OpenLinkway. It contains the following properties:
+The bars.json file is responsible for configuring the header and footer sections of LittlePathway. It contains the following properties:
 
  - header: An object representing the header bar configuration.
     - color: The background colour of the header bar.
@@ -117,11 +117,11 @@ Example usage:
 {
     "header": { "color": "#94f5afB0",
     "items": [
-    "Powered by [OpenLinkway](https://github.com/StrawbethyMilkshake/OpenLinkway) create your own!"
+    "Powered by [LittlePathway](https://github.com/StrawbethyMilkshake/LittlePathway) create your own!"
     ]},
     "footer": { "color": "#94f5afB0",
     "items": [
-    "Powered by [OpenLinkway](https://github.com/StrawbethyMilkshake/OpenLinkway) create your own!",
+    "Powered by [LittlePathway](https://github.com/StrawbethyMilkshake/LittlePathway) create your own!",
     "Facebook icon designed by [OpenMoji](https://openmoji.org) - the open-source emoji and icon project. License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)",
     "Demo button/Background images from [Lorem Picsum](https://picsum.photos) and [Cat as a service](https://cataas.com/)"
     ]}
