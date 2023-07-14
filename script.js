@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const headerBar = document.getElementById("header-bar");
   const metaDescription = document.querySelector('meta[name="description"]');
 
-  // Generate a unique query parameter 
+  // Generate a unique query parameter
   const timestamp = Date.now();
 
   const linksPromise = fetch(`config/links.json?t=${timestamp}`)
