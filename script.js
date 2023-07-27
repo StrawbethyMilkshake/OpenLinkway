@@ -86,8 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
       linksData.forEach((link) => {
         const linkButton = document.createElement("a");
         linkButton.href = link.url;
-        linkButton.rel = "noopener";
         linkButton.classList.add("link-button");
+
+        if (link.rel) {
+          linkButton.rel = link.rel;
+        } 
+        else {
+          linkButton.rel = "noopener";
+        }
 
         if (link.color) {
           linkButton.style.backgroundColor = link.color;
