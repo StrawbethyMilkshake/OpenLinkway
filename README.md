@@ -7,9 +7,9 @@ OpenLinkway is a simple web application that allows you to create and customise 
 
 👩‍💻 No Coding Required: The primary goal of OpenLinkway is to eliminate the need for users to write any code. Instead, users can configure OpenLinkway through easily editable configuration files.
 
-🍦 Vanilla JS: OpenLinkway is built using only vanilla JavaScript, avoiding the use of any frameworks or libraries. This choice ensures simplicity and eliminates dependencies.
+💻 Flexible Rendering: OpenLinkway supports both client-side and pre-rendering, allowing you to choose the best approach for your needs. Both options can be hosted with minimal running costs, potentially enabling free or very low-cost hosting.
 
-💻 Client-side Rendering: All rendering is done in the user's browser without the need for server-side code. This approach allows for minimal running costs, potentially making it feasible to host OpenLinkway for free or at very low cost.
+🍦 Vanilla JS: OpenLinkway is built using only vanilla JavaScript, avoiding the use of any frameworks or libraries. This choice ensures simplicity and eliminates dependencies.
 
 ✨ Easy customisation: With OpenLinkway, users can easily customise the appearance of their OpenLinkway page by editing configuration files. This flexibility enables users to create a personalised collection of links that aligns with their preferences and branding.
 
@@ -127,3 +127,25 @@ Example usage:
     ]}
 }
 ```
+
+
+### 4. (Optional, but recommended) Pre-render the site for improved SEO and initial load times
+Pre-rendering generates static HTML files that can be served directly to users, improving SEO and perceived load times. To pre-render your OpenLinkway site, follow these steps:
+
+#### Install dependencies: 
+Make sure you have npm and Python installed on your system. These are typically provided by Cloudflare Pages and other static site hosts.
+
+#### Run the pre-render script: 
+
+Execute the following command in your project directory (for Cloudflare pages set this as your Build command):
+
+```Bash
+npm install puppeteer fs-extra && nohup python3 -m http.server & node build.js && pkill python3
+```
+
+This command will install the necessary packages, start a local web server, run the pre-rendering script (build.js), and then stop the web server.
+
+#### Deploy the pre-rendered files: 
+The pre-rendering process will generate a build directory containing the static HTML files. Deploy this directory to your hosting provider. (for Cloudflare pages set your Build output directory to `build`)
+
+Pre-rendering can significantly improve the performance and visibility of your OpenLinkway site, especially for users with slower connections or search engine crawlers.
