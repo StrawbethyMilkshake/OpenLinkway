@@ -60,41 +60,48 @@
       // Processing page
       Promise.all([linksPromise, pagePromise, barsPromise])
         .then(([linksData, pageData, barsData]) => {
-          // Process the page configuration
+          // Set the page logo
           if (pageData.logo) {
             const logoImg = document.createElement("img");
             logoImg.src = pageData.logo;
             logoImg.alt = "Logo";
             logoContainer.appendChild(logoImg);
           }
-
+          
+          // Set the page background image
           if (pageData.backgroundImage) {
             bgContainer.style.backgroundImage = `url(${pageData.backgroundImage})`;
           }
 
+          // Set the Favicon
           if (pageData.favicon) {
             const faviconElement = document.getElementById("favicon");
             faviconElement.href = pageData.favicon;
           }
 
+          // Set the page title
           if (pageData.title) {
             document.title = pageData.title;
           }
 
+          // Set the page description - TODO: Fix this and maybe do more metadata tags
           if (pageData.description) {
             metaDescription.textContent = pageData.description;
           }
 
+          // Set page language
           if (pageData.language) {
             document.documentElement.lang = pageData.language;
           }  
 
           // Process the links configuration
           linksData.forEach((link) => {
+            // Create button
             const linkButton = document.createElement("a");
             linkButton.href = link.url;
             linkButton.classList.add("link-button");
 
+            // set rel config
             if (link.rel) {
               linkButton.rel = link.rel;
             } 
@@ -102,10 +109,12 @@
               linkButton.rel = "noopener";
             }
 
+            // Set button colour
             if (link.color) {
               linkButton.style.backgroundColor = link.color;
             }
 
+            // Set button icon
             if (link.logo) {
               const logoImg = document.createElement("img");
               logoImg.src = link.logo;
@@ -113,16 +122,20 @@
               linkButton.appendChild(logoImg);
             }
 
+            // Open link in a new tab?
             if (link.newTab) {
-              linkButton.target = "_blank"; // Open link in a new tab
+              linkButton.target = "_blank"; 
             }
 
+            // Create a span to hold the link's text and add it to the button.
             const spanText = document.createElement("span");
             spanText.textContent = link.text;
             linkButton.appendChild(spanText);
 
+            // Set hover text
             linkButton.setAttribute("title", link.hoverText);
 
+            // Configure text settings
             if (link.fontFamily) {
               linkButton.style.fontFamily = link.fontFamily;
             }
@@ -154,22 +167,27 @@
               linkButton.style.color = link.textColor;
             }
 
+            // Configure button gradient
             if (link.gradient) {
               const gradientStyle = generateGradientStyle(link.gradient);
               linkButton.style.backgroundImage = gradientStyle;
             }
 
+            // Set screen reader label
             linkButton.setAttribute("aria-label", link.text);
 
+            // Add button to links
             linksContainer.appendChild(linkButton);
           });
 
           // Process the bars configuration
           const { header, footer } = barsData;
 
-          if (header) {
-            headerBar.style.backgroundColor = header.color;
+          // Header Bar
+            if (header) {
+              headerBar.style.backgroundColor = header.color; // Set header bar colour
 
+            // Process header items
             if (header.items) {
               header.items.forEach((item) => {
                 const headerItem = createBarItem(item);
@@ -178,9 +196,11 @@
             }
           }
 
-          if (footer) {
-            footerBar.style.backgroundColor = footer.color;
+          // Footer Bar
+            if (footer) {
+              footerBar.style.backgroundColor = footer.color;  // Set footer bar colour
 
+            // Process footer items
             if (footer.items) {
               footer.items.forEach((item) => {
                 const footerItem = createBarItem(item);
@@ -188,6 +208,7 @@
               });
             }
           }
+        
         })
         .catch((error) => {
           console.error("Error loading configuration:", error);
@@ -277,5 +298,5 @@
   }
 
 // Page Rightsizing
-document.addEventListener("DOMContentLoaded", pageRightsize); // Rightsize elements on page load
-window.addEventListener("resize", pageRightsize); // Rightsize elements on canvas resize
+  document.addEventListener("DOMContentLoaded", pageRightsize); // Rightsize elements on page load
+  window.addEventListener("resize", pageRightsize); // Rightsize elements on canvas resize
