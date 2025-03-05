@@ -31,7 +31,9 @@ async function preRender() {
     // Copy styles.css and assets folder to build directory
     await fs.copy('styles.css', path.join(buildDir, 'styles.css'));
     await fs.copy('script.js', path.join(buildDir, 'script.js'));
+    await fs.copy('config', path.join(buildDir, 'config'));
     await fs.copy('assets', path.join(buildDir, 'assets'));
+    await fs.copy('LICENSE.md', path.join(buildDir, 'LICENSE.md'));
 
     await browser.close();
 }
