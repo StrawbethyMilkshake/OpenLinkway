@@ -140,7 +140,7 @@ Make sure you have npm and Python installed on your system. These are typically 
 Execute the following command in your project directory (for Cloudflare pages set this as your Build command):
 
 ```Bash
-npm install puppeteer fs-extra && nohup python3 -m http.server & node build.js && pkill python3
+make full-build
 ```
 
 This command will install the necessary packages, start a local web server, run the pre-rendering script (build.js), and then stop the web server.
