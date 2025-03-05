@@ -9,8 +9,6 @@ OpenLinkway is a simple web application that allows you to create and customise 
 
 🍦 Vanilla JS: OpenLinkway is built using only vanilla JavaScript, avoiding the use of any frameworks or libraries. This choice ensures simplicity and eliminates dependencies.
 
-💻 Client-side Rendering: All rendering is done in the user's browser without the need for server-side code. This approach allows for minimal running costs, potentially making it feasible to host OpenLinkway for free or at very low cost.
-
 ✨ Easy customisation: With OpenLinkway, users can easily customise the appearance of their OpenLinkway page by editing configuration files. This flexibility enables users to create a personalised collection of links that aligns with their preferences and branding.
 
 📚 Documentation: OpenLinkway strives to provide comprehensive documentation to assist users in setting up and configuring their OpenLinkway page. This ensures a smooth and hassle-free experience.
