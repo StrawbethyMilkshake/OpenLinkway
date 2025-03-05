@@ -26,7 +26,11 @@ async function preRender() {
 
     // Save the rendered HTML
     const html = await page.content();
-    await fs.writeFile(path.join(buildDir, 'index.html'), html);
+
+    // Add the "rendered" tag to the HTML content
+    const modifiedHtml = html.replace(/<html[^>]*>/, (match) => match.replace('>', ' rendered>'));
+
+    await fs.writeFile(path.join(buildDir, 'index.html'), modifiedHtml);
 
     // Copy styles.css and assets folder to build directory
     await fs.copy('styles.css', path.join(buildDir, 'styles.css'));
