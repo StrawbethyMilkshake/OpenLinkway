@@ -7,4 +7,4 @@ build:
 full-build:
 	make deps && make build
 
-.PHONY: install build
+.PHONY: deps build full-build
