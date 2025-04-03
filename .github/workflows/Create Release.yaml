@@ -22,7 +22,7 @@ jobs:
           
       - name: Archive Files
         run: |
-          tar -czf OpenLinkway.tar.gz styles.css script.js index.html LICENSE.md build.js Makefile
+          tar -czf OpenLinkway.tar.gz styles.css index.html LICENSE.md build.js Makefile js
 
           
       - name: Create Release
