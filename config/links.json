@@ -26,7 +26,13 @@
     "hoverText": "Visit Another Example",
     "logo": "https://openmoji.org/data/color/svg/E042.svg",
     "rel": "me",
-    "color": "#ff0000"
+    "color": "#ff0000",
+    "remoteFont": {
+      "fontUrl": "https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap",
+      "font-family": "Pinyon Script",
+      "font-weight": 400,
+      "font-style": "normal"
+    }
   },
   {
     "url": "https://example.local",
@@ -37,6 +43,12 @@
       "shape": "circle",
       "position": "center",
       "colors": ["#ff0000", "#00ff00"]
+    },
+    "remoteFont": {
+      "fontUrl": "https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap",
+      "font-family": "Fascinate Inline",
+      "font-weight": 400,
+      "font-style": "normal"
     }
   },
   {

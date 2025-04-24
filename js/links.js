@@ -1,4 +1,4 @@
-import { generateGradientStyle } from './utils.js';
+import { generateGradientStyle, loadFont } from './utils.js';
 
 export function renderLinks(linksData) {
     const linksContainer = document.getElementById("links-container");
@@ -35,14 +35,31 @@ export function renderLinks(linksData) {
   
       linkButton.setAttribute("title", link.hoverText);
   
-      if (link.fontFamily) {
-        linkButton.style.fontFamily = link.fontFamily;
+      if (link.remoteFont && link.remoteFont.fontUrl) {
+        loadFont(link.remoteFont.fontUrl);
+
+        if (link.remoteFont['font-family']) {
+            linkButton.style.fontFamily = link.remoteFont['font-family'];
+        }
+
+        if (link.remoteFont['font-weight']) {
+            linkButton.style.fontWeight = link.remoteFont['font-weight'];
+        }
+
+        if (link.remoteFont['font-style']) {
+            linkButton.style.fontStyle = link.remoteFont['font-style'];
+        }
+        
+      } else {
+        if (link.fontFamily) {
+          linkButton.style.fontFamily = link.fontFamily;
+        }
+
+        if (link.fontWeight) {
+          linkButton.style.fontWeight = link.fontWeight;
+        }
       }
-  
-      if (link.fontWeight) {
-        linkButton.style.fontWeight = link.fontWeight;
-      }
-  
+
       if (link.fontSize) {
         linkButton.style.fontSize = link.fontSize;
       }
