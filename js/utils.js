@@ -54,3 +54,21 @@ export function generateGradientStyle(gradient) {
     return barItem;
   }
   
+
+const loadedFontUrls = new Set();
+
+export function loadFont(fontUrl) {
+  if (!fontUrl || loadedFontUrls.has(fontUrl)) {
+    return;
+  }
+
+  try {
+    const styleElement = document.createElement("style");
+    styleElement.textContent = `@import url('${fontUrl}');`;
+    document.head.appendChild(styleElement);
+    loadedFontUrls.add(fontUrl);
+    console.log(`Font loaded: ${fontUrl}`);
+  } catch (error) {
+    console.error(`Failed to load font: ${fontUrl}`, error);
+  }
+}
