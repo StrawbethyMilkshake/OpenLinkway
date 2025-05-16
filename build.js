@@ -2,6 +2,27 @@ const puppeteer = require('puppeteer');
 const fs = require('fs-extra');
 const path = require('path');
 
+async function generateRedirects() {
+    const linksConfigPath = path.resolve(__dirname, 'config', 'links.json');
+    const redirectsFilePath = path.resolve(__dirname, 'build', '_redirects');
+
+    const linksConfig = await fs.readJson(linksConfigPath);
+
+    const redirectRules = linksConfig
+        .filter(link => link.redirect && link.url)
+        .map(link => `${link.redirect} ${link.url} 302`)
+        .join('\n');
+
+    if (redirectRules) {
+        // Append the generated rules to the _redirects file,
+        await fs.appendFile(redirectsFilePath, '\n' + redirectRules);
+        console.log('Generated and appended redirect rules to _redirects.');
+    } else {
+        console.log('No redirect rules found in links.json.');
+    }
+
+}
+
 async function preRender() {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -39,8 +60,11 @@ async function preRender() {
     await fs.copy('assets', path.join(buildDir, 'assets'));
     await fs.copy('robots.txt', path.join(buildDir, 'robots.txt'));
     await fs.copy('LICENSE.md', path.join(buildDir, 'LICENSE.md'));
+    await fs.copy('_redirects', path.join(buildDir, '_redirects'));
 
     await browser.close();
+    
+    await generateRedirects();
 }
 
 preRender();
