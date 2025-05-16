@@ -1,6 +1,7 @@
 [
   {
-    "url": "https://example.local",
+    "url": "https://bsky.app/profile/TestUser",
+    "redirect": "/example",
     "text": "Example",
     "hoverText": "Visit Example",
     "newTab": true,
@@ -22,6 +23,7 @@
   },
   {
     "url": "https://another-example.local",
+    "redirect": "/example2",
     "text": "Another Example",
     "hoverText": "Visit Another Example",
     "logo": "https://openmoji.org/data/color/svg/E042.svg",
